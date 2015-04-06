@@ -21,4 +21,20 @@ def inversion(matrix_2D):
 
 print inversion(initial_state)		
 			
-			
+def find_N(matrix_2D):
+	m_1D = convert_to_1D(matrix_2D)
+	inversion = 0
+	for index in range(len(m_1D)):
+		temp = m_1D[index]
+		if temp == 0 or temp == 1:
+			continue
+		for elem in m_1D[index:]:
+			if elem == 0:
+				continue
+			if (temp > elem):
+				inversion += 1
+	return inversion
+
+print find_N(initial_state)
+				
+					
