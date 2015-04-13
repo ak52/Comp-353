@@ -67,4 +67,25 @@ def is_solvable(matrix_2D):
 	else:
 		return False
 				
-					
+# find_row_col 2-dimesional arrays-of-numbers, value -> tuple
+
+def find_row_col(matrix_2D,value):
+	tup = (0,0)
+	for i in range(len(matrix_2D)):
+		for j in range(len(matrix_2D)):
+			if(value == matrix_2D[i][j]):
+				tup = (i,j)
+				return tup
+	 
+print find_row_col(goal_state,5)
+
+def find_row_col_2(matrix_2D,value):
+	m_1D = convert_to_1D(matrix_2D)
+	tup = (0,0)
+	for i in range(len(m_1D)):
+			if(value == m_1D[i]):
+				tup = (int(i/3) ,i % 3)
+				return tup
+
+print find_row_col_2(goal_state,5)
+	 					
