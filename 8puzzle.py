@@ -37,4 +37,34 @@ def find_N(matrix_2D):
 
 print find_N(initial_state)
 				
+# is_valid 2-dimensional arrays-of-numbers -> boolean
+
+def is_valid(matrix_2D):
+
+	""" checks whether the given matrix is valid or not """
+	sum_of_numbers = 0
+	sum_of_squares = 0
+	m_1D = convert_to_1D(matrix_2D)
+	for index in range(len(m_1D)):
+		sum_of_numbers += m_1D[index]
+		sum_of_squares += pow(m_1D[index],2)
+	if sum_of_numbers == 36 and sum_of_squares == 204:
+		return True
+	else:
+		return False
+
+# is_solvable 2-dimesional arrays-of-numbers -> boolean
+
+def is_solvable(matrix_2D):
+
+	""" checks whether the given matrix is solvable or not """
+	goal = find_N(goal_state)
+	initial = find_N(matrix)
+	if (goal % 2) == 0 and (initial % 2) == 0:
+		return True
+	elif (goal % 2) == 1 and (initial % 2) == 1:
+		return True
+	else:
+		return False
+				
 					
